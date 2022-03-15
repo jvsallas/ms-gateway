@@ -1,4 +1,4 @@
-package br.com.mercadosallas.dto;
+package br.com.mercadosallas.clientes.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

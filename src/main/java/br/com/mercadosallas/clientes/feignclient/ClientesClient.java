@@ -1,8 +1,8 @@
-package br.com.mercadosallas.feign.client;
+package br.com.mercadosallas.clientes.feignclient;
 
-import br.com.mercadosallas.dto.ClienteAtualizacaoForm;
-import br.com.mercadosallas.dto.ClienteDto;
-import br.com.mercadosallas.gateway.clientes.dto.ClienteForm;
+import br.com.mercadosallas.clientes.dto.ClienteAtualizacaoForm;
+import br.com.mercadosallas.clientes.dto.ClienteDto;
+import br.com.mercadosallas.clientes.dto.ClienteForm;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @FeignClient(name = "modulo-clientes", url = "http://localhost:8080/clientes")
-public interface ClienteClient {
+public interface ClientesClient {
 
     @PostMapping
     ResponseEntity<ClienteDto> adicionarCliente(@RequestBody ClienteForm clienteForm) throws Exception;
 
     @GetMapping
-    ResponseEntity<List<ClienteDto>> listarClientes() throws Exception;
+    ResponseEntity<Object> listarClientes(@RequestParam String cpf) throws Exception;
 
     @GetMapping("/{id}")
     ResponseEntity<ClienteDto> buscarClientePorId(@PathVariable String id) throws Exception;

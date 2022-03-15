@@ -1,9 +1,9 @@
-package br.com.mercadosallas.service;
+package br.com.mercadosallas.clientes.service;
 
-import br.com.mercadosallas.dto.ClienteAtualizacaoForm;
-import br.com.mercadosallas.dto.ClienteDto;
-import br.com.mercadosallas.feign.client.ClienteClient;
-import br.com.mercadosallas.gateway.clientes.dto.ClienteForm;
+import br.com.mercadosallas.clientes.dto.ClienteAtualizacaoForm;
+import br.com.mercadosallas.clientes.dto.ClienteDto;
+import br.com.mercadosallas.clientes.feignclient.ClientesClient;
+import br.com.mercadosallas.clientes.dto.ClienteForm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,25 +18,25 @@ public class ClienteService {
     private static final Logger log = LoggerFactory.getLogger(ClienteService.class);
 
     @Autowired
-    private ClienteClient clienteClient;
+    private ClientesClient clientesClient;
 
     public ResponseEntity<ClienteDto> adicionarCliente(ClienteForm clienteForm) throws Exception {
-        return clienteClient.adicionarCliente(clienteForm);
+        return clientesClient.adicionarCliente(clienteForm);
     }
 
-    public ResponseEntity<List<ClienteDto>> listarClientes() throws Exception {
-        return clienteClient.listarClientes();
+    public ResponseEntity<Object> listarClientes(String cpf) throws Exception {
+        return clientesClient.listarClientes(cpf);
     }
 
     public ResponseEntity<ClienteDto> buscarClientePorId(String id) throws Exception {
-        return clienteClient.buscarClientePorId(id);
+        return clientesClient.buscarClientePorId(id);
     }
 
     public ResponseEntity<ClienteDto> alterarDadosCliente(String id, ClienteAtualizacaoForm form) throws Exception {
-        return clienteClient.alterarDadosCliente(id, form);
+        return clientesClient.alterarDadosCliente(id, form);
     }
 
     public void deletarCliente(String id) throws Exception {
-        clienteClient.deletarCliente(id);
+        clientesClient.deletarCliente(id);
     }
 }

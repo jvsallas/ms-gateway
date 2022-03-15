@@ -1,4 +1,4 @@
-package br.com.mercadosallas.dto;
+package br.com.mercadosallas.clientes.dto;
 
 import br.com.mercadosallas.telefones.dto.TelefoneDto;
 import com.fasterxml.jackson.annotation.JsonProperty;

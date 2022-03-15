@@ -1,9 +1,9 @@
-package br.com.mercadosallas.controller;
+package br.com.mercadosallas.clientes.controller;
 
-import br.com.mercadosallas.dto.ClienteAtualizacaoForm;
-import br.com.mercadosallas.dto.ClienteDto;
-import br.com.mercadosallas.gateway.clientes.dto.ClienteForm;
-import br.com.mercadosallas.service.ClienteService;
+import br.com.mercadosallas.clientes.dto.ClienteAtualizacaoForm;
+import br.com.mercadosallas.clientes.dto.ClienteDto;
+import br.com.mercadosallas.clientes.dto.ClienteForm;
+import br.com.mercadosallas.clientes.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -24,8 +24,8 @@ public class ClienteController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ClienteDto>> listarClientes() throws Exception {
-        return clienteService.listarClientes();
+    public ResponseEntity<Object> listarClientes(@RequestParam (required = false) String cpf) throws Exception {
+        return clienteService.listarClientes(cpf);
     }
 
     @GetMapping("/{id}")
