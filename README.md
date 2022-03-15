@@ -124,9 +124,9 @@ Response: 200 OK.
 
 #### GET:
 
-Descrição: Obtem cliente cadastrado pelo cpf.
+Descrição: Obtem cliente cadastrado pelo cpf, por parâmetro.
 
-Uri: /clientes/cpf/{cpf}
+Uri: /clientes?cpf=11111111111
 
 Request Body: Vazio
 
