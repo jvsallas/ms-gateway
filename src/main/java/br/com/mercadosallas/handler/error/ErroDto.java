@@ -1,4 +1,4 @@
-package br.com.mercadosallas.error.handler.dto;
+package br.com.mercadosallas.handler.error;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

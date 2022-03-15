@@ -1,4 +1,4 @@
-package br.com.mercadosallas.error;
+package br.com.mercadosallas.decode;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;

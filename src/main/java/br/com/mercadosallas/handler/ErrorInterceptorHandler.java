@@ -1,9 +1,7 @@
-package br.com.mercadosallas.error.handler;
+package br.com.mercadosallas.handler;
 
-import br.com.mercadosallas.error.CustomErrorDecoder;
-import br.com.mercadosallas.error.handler.dto.ErroDto;
-import feign.Feign;
-import feign.FeignException;
+import br.com.mercadosallas.decode.CustomErrorDecoder;
+import br.com.mercadosallas.handler.error.ErroDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
